@@ -7,5 +7,5 @@ bool Fill::Execute()
 
 bool Fill::Undo()
 {
-	return board->SetValue(colX, rowY, 0);
+	return board->SetValue(colX, rowY, prevVal);
 }

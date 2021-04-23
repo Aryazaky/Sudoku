@@ -64,3 +64,13 @@ int Board::GetValue(int col, int row)
 {
 	return board[col][row].value;
 }
+
+bool Board::CheckAnswer()
+{
+	return (board == answer_board);
+}
+
+int Board::GetSize()
+{
+	return size;
+}

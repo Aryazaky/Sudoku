@@ -5,7 +5,7 @@ class Delete :
 {
     int deletedVal;
 public:
-    Delete(Board& _board, int col = 0, int row = 0) :Command(_board, col, row) {}
+    Delete(Board& _board, int col = 0, int row = 0) :Command(_board, col, row) { deletedVal = 0; }
     bool Execute();
     bool Undo();
 };

@@ -1,12 +1,18 @@
 #pragma once
 #include"Board.h"
 #include"CommandStack.h"
+#include"Fill.h"
+#include"Delete.h"
 class Sudoku
 {
 private:
 	Board board;
 	CommandStack commands;
-	int cursor;
+	struct Cursor {
+		int x;
+		int y;
+	};
+	Cursor cursor;
 	int number;
 	void GameLoop();
 	void DisplayGame();
@@ -14,6 +20,7 @@ private:
 	void ActionFill();
 	void ActionRemove();
 	void UndoAction();
+	void RedoAction();
 	bool CheckWin();
 public:
 	Sudoku();
