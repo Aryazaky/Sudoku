@@ -2,7 +2,7 @@
 
 void Board::FillBoard() {
 	std::string temp_answer = answer;
-	if (size > 0 && temp_answer.size() >= (size * size)) {
+	if (size > 0 && temp_answer.size() >= ((size_t)size * (size_t)size)) {
 		int i = size, o = size;
 		while (i--) {
 			std::vector<Cell> temp;
@@ -58,4 +58,9 @@ bool Board::SetValue(int col, int row, int val)
 		return true;
 	}
 	return false;
+}
+
+int Board::GetValue(int col, int row)
+{
+	return board[col][row].value;
 }

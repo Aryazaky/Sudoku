@@ -1,9 +1,11 @@
 #include "Fill.h"
 
-void Fill::Execute()
+bool Fill::Execute()
 {
+	return board->SetValue(colX, rowY, value);
 }
 
-void Fill::Undo()
+bool Fill::Undo()
 {
+	return board->SetValue(colX, rowY, 0);
 }

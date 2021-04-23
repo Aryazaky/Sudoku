@@ -1,9 +1,12 @@
 #include "Delete.h"
 
-void Delete::Execute()
+bool Delete::Execute()
 {
+	deletedVal = board->GetValue(colX, rowY);
+	return board->SetValue(colX, rowY, 0);
 }
 
-void Delete::Undo()
+bool Delete::Undo()
 {
+	return board->SetValue(colX, rowY, deletedVal);
 }

@@ -3,9 +3,15 @@
 #include <stack>
 class CommandStack
 {
+private:
+	std::stack<Command*> History;
+	std::stack<Command*> RedoStack;
 public:
-	std::stack<Command> *History;
-	std::stack<Command> *RedoStack;
 	CommandStack();
+	~CommandStack();
+
+	void Push(Command* command);
+	void Pop();
+	void Repush();
 };
 

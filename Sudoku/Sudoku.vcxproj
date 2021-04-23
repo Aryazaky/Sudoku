@@ -144,6 +144,7 @@
     <ClCompile Include="CommandStack.cpp" />
     <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Fill.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sudoku.cpp" />
   </ItemGroup>
   <ItemGroup>

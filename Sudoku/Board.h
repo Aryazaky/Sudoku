@@ -19,5 +19,6 @@ public:
 	Board();
 	Board(std::string _answer, int _size);
 	bool SetValue(int col, int row, int val);
+	int GetValue(int col, int row);
 };
 
