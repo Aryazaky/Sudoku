@@ -22,5 +22,6 @@ public:
 	int GetValue(int col, int row);
 	bool CheckAnswer();
 	int GetSize();
+	std::string BoardAsString();
 };
 

@@ -74,3 +74,24 @@ int Board::GetSize()
 {
 	return size;
 }
+
+std::string Board::BoardAsString()
+{
+	std::string res;
+	for (auto& col : board) {
+		for (auto& cell : col) {
+			if (cell.value == 0) {
+				res += "| ";
+			}
+			else
+			{
+				res += std::string() + "|" + (char)cell.value;
+			}
+		}
+		res += "\n";
+		for (auto& cell : col) {
+			res += "--";
+		}
+		res += "\n";
+	}
+}

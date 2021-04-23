@@ -1,4 +1,5 @@
 #include "CommandStack.h"
+#include <iostream>
 
 CommandStack::CommandStack()
 {
@@ -12,20 +13,35 @@ CommandStack::~CommandStack()
 
 void CommandStack::Push(Command* command)
 {
-	History.push(command);
-	command->Execute();
+	if (command->Execute()) {
+		History.push(command);
+	}
+	else
+	{
+		std::cout << "Gagal execute command! Tidak jadi push";
+	}
 }
 
 void CommandStack::Pop()
 {
-	RedoStack.push(History.top());
-	History.top()->Undo();
-	History.pop();
+	if (History.top()->Undo()) {
+		RedoStack.push(History.top());
+		History.pop();
+	}
+	else
+	{
+		std::cout << "Gagal undo command! Tidak jadi pop";
+	}
 }
 
 void CommandStack::Repush()
 {
-	History.push(RedoStack.top());
-	History.top()->Execute();
-	RedoStack.pop();
+	if (History.top()->Execute()) {
+		History.push(RedoStack.top());
+		RedoStack.pop();
+	}
+	else
+	{
+		std::cout << "Gagal execute command! Tidak jadi repush";
+	}
 }
